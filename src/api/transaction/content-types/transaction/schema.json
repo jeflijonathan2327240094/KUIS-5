@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "transaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "inscurance_price": {
+      "type": "integer"
+    },
+    "shipping_price": {
+      "type": "integer"
+    },
+    "total_price": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    },
+    "transaction_status": {
+      "type": "enumeration",
+      "enum": [
+        "PENDING",
+        "SHIPPING",
+        "SUCCESS"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

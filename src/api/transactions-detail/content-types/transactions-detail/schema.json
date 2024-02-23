@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions_details",
+  "info": {
+    "singularName": "transactions-detail",
+    "pluralName": "transactions-details",
+    "displayName": "transactions-detail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "price": {
+      "type": "biginteger"
+    },
+    "shipping_status": {
+      "type": "enumeration",
+      "enum": [
+        "PENDING",
+        "SHIPPING",
+        "SUCCESS"
+      ]
+    },
+    "resi": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "transaction": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::transaction.transaction"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    }
+  }
+}
